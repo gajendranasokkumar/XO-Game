@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Roboto+Slab:wght@400;500&display=swap');
+
+
+/**
+main Colors:
+background = #1A2B33 #192A32
+box color = #20353F #1F3540
+shadow = #102129
+X color = #31C3BE
+O color = #F2B237
+Grey = #A8BEC9
+**/
+
+button:focus{
+    outline: none;
+}
+
+#winnerResultContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#playWithContainer , #startingPage{
+    height: 100vh;
+    background-color: #192A32;
+}
+
+.hideAndDisplay{
+    display: none;
+}
+
+body{
+    background-color: #192A32;
+    margin: 0;
+}
+
+.startPageContainer{
+    background-color: transparent !important;
+}
+
+.startingLogoContainer{
+    height: 120px;
+    width: 240px;
+    padding: 5px;
+    border-radius: 8px;
+    background-image: linear-gradient(to bottom right,#F2B237, #31C3BE);
+}
+
+.tictactoename{
+    color: #31C3BE;
+    position: relative;
+    bottom: -35px;
+    font-size: 45px;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.startingLogoInnerContainer{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #192A32;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 24px;
+}
+
+.startButton{
+    width: 180px;
+    position: relative;
+    top: -35px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 40px;
+    font-size: 20px;
+    color: #0a171d;
+    font-weight: 700;
+    background-color: #F2B237;
+    border: 0;
+    box-shadow: 0px 5px #845600;
+    border-radius: 10px;
+}
+
+.mainParentContainer{
+    height: 100vh;
+    background-size: cover;
+    background-color: #192A32;
+}
+
+.gameMainContainer{
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamePlace{
+    height:  450px;
+    /* background-color: aqua; */
+}
+
+.headControlContainer{
+    height: 10%;
+    display: flex;
+    margin-bottom: 10px;
+    /* border: 1px solid black; */
+}
+
+.logoContainer{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    /* border: 1px solid black; */
+    padding-left: 10px;
+}
+
+.Xlogo{
+    color: #31C3BE;
+    font-size: 45px;
+    font-weight: 900;
+    /* border: 1px solid black; */
+    display: grid;
+    place-content: center;
+    /* padding-bottom: 10px; */
+}
+
+.Ologo{
+    color: #F2B237;
+    font-size: 35px;
+    font-weight: 900;
+    /* border: 1px solid black; */
+    display: grid;
+    place-content: center;
+}
+
+.whosTurnContainer{
+    /* border: 1px solid black; */
+    width: 30%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.playersTurn{
+    height: 100%;
+    width: 100%;
+    background-color: #A8BEC9;
+    border-bottom: 3px solid #8597a0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #0a171d;
+    font-size: 20px;
+}
+
+#player_Turn , #ccplayer_Turn{
+    font-size: 25px;
+    font-weight: 600;
+    width: 15%;
+}
+
+.playerTopX{
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+.restartButtonContainer{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding-right: 11px;
+    text-align: end;
+}
+
+.restartButton{
+    height: 100%;
+    width: 45px;
+    background-color: #A8BEC9;
+    border: 0px;
+    border-radius: 8px;   
+    border-bottom: 3px solid #8597a0;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+button:focus{
+    outline: none;
+}
+
+.middleXOgameContainer{
+    height: 80%;
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.middleXOgameSecondContainer{
+    /* border: 1px solid red; */
+    background-color: transparent;
+    height: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    top: -80%;
+}
+
+.gameInnerBox{
+    /* border: 1px solid black; */
+    margin: 10px;
+    background-color: #1F3540;
+    border-bottom: 6px solid #0a171d;
+    border-radius: 10px;
+    box-sizing: content-box;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.IIndgameInnerBox{
+    /* border: 1px solid black; */
+    margin: 10px;
+    border-bottom: 6px solid transparent;
+    background-color: transparent;
+    border-radius: 10px;
+    box-sizing: content-box;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.hoverOpacity{
+    opacity: 0.4;
+}
+
+.gameOMainLogo{
+    height: 70px;
+    width: 70px;
+    border: 13px solid #F2B237;
+    border-radius: 100%;
+}
+
+.gameXMainLogo{
+    display: flex;
+}
+
+.XsLeftHand{
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 7px;
+    bottom: 0; 
+    /* z-index: 0; */
+    width: 13px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #31C3BE;
+    rotate: 45deg;
+}
+
+.XsRightHand{
+    position: relative;
+    top: 0;
+    right: 0px;
+    left: -6px;
+    bottom: 0;
+    width: 13px;
+    height: 70px;
+    background-color: #31C3BE;
+    rotate: -45deg;
+}
+
+.gameX{
+    color: #31C3BE;
+    font-size: 100px;    
+}
+
+.footerDetailsContainer{
+    height: 10%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    position: relative;
+    top: -80%;
+}
+
+.XsResultContainer{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.XsResult{
+    height: 100%;
+    width: 100%;
+    background-color: #31C3BE;
+    border-radius: 8px;
+}
+
+.TotalresultContainer{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.TotalResult{
+    height: 100%;
+    width: 100%;
+    background-color: #A8BEC9;
+    border-radius: 8px;
+}
+
+.OsResultContainer{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.OsResult{
+    height: 100%;
+    width: 100%;
+    background-color: #F2B237;
+    border-radius: 8px;
+}
+
+.XsResult, .TotalResult, .OsResult{
+    padding-top: 3px;
+}
+
+.xWinningCount{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 18px;
+}
+
+
+/***************************Winner result Display Page***************************/
+
+.commonNewPage{
+    height: 100vh;
+    backdrop-filter: blur(5px) ;
+    -webkit-backdrop-filter: blur(5px) ;
+    /* background-color: rgba(17, 25, 40, 0.75); */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+.displayAnimation{
+    position: relative;
+    overflow-y: hidden;
+    animation: forwards 1 showFromBottom 0.5s;
+}
+
+@keyframes showFromBottom {
+    from{top: 100vh;}
+    to{top: 0;}
+}
+
+.rowHeight{
+    height: 260px;
+}
+
+.commonCenteredContainer{
+    height: 260px;
+    width: 100%;
+    /* border-bottom: 1px solid #243841a5; */
+    /* box-shadow: 1px 5px 10px #8597a0; */
+    background-color: #8597a0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnerText{
+    color: #F2B237;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 55px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 2px 5px #0a171d;
+    font-family: 'Finger Paint', cursive;
+}
+
+.winnerLogoName{
+    height: 100px;
+    width: 100px;
+    background-color: #274351;
+    box-shadow: 0 5px  #192A32;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.WinnergameX{
+    font-size: 100px;
+    margin: 0;
+}
+
+.winnerDiscription{
+    text-transform: capitalize;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Roboto Slab', serif;
+}
+
+.winnerResultPageButtonContainer{
+    position: relative;
+    top: 16px;
+    text-align: center;
+}
+
+.winnerPageQuitButton{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(255, 0, 68);
+    text-shadow: 1px 2px 5px #0a171d;
+    border: 0;
+    border-bottom: 3px solid rgb(125, 0, 0);
+    border-right: 3px solid rgb(125, 0, 0);
+    border-radius: 8px;
+}
+
+.winnerPageRestartButton{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: #F2B237;
+    text-shadow: 1px 2px 5px #0a171d;
+    border: 0;
+    border-bottom: 3px solid #845600;
+    border-right: 3px solid #845600;
+    border-radius: 8px;
+}
+
+
+/************************Play With Page***********************/
+
+.playWithText{
+    font-family: 'Croissant One', cursive;
+}
+
+.playWithButtonContainer{
+    margin-top: 15px;
+}
+
+.playWithPersonButton{
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: rgb(0, 102, 102);
+    color: white;
+    border: 0;
+    border-bottom: 4px solid rgb(1, 56, 56);
+}
+
+.playWithComputerButton{
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: rgb(255, 116, 70);
+    color: white;
+    border: 0;
+    border-bottom: 4px solid rgb(104, 67, 54);
+}
+
+.logoIMage{
+    width: auto;
+    height: 50px;
+    border-radius: 10px;
+}
+
+/* 
+.drawMatchDisplayContainer{
+    background-color: #274351;
+    color: white;
+    height: 40px;
+    width: 250px;
+    position: relative;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 2px solid white;
+}
+
+.drawMessage{
+    margin-top: 6px;
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="XOgame.css">
+    <script src="XOgame.js" defer></script>
+    <!-- <script src="XOgameComputer.js" defer></script> -->
+    <title>Gajendran's XO Game</title>
+    <link rel="icon" href="https://res.cloudinary.com/dkbwdkthr/image/upload/v1695493451/Screenshot_2023-09-23_235017_rjusju.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c47716a54.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid" id="startingPage">
+        <div class="row commonNewPage">
+            <h1 class="tictactoename">Tic-Tac-Toe</h1>
+            <div class="commonCenteredContainer startPageContainer">
+                <div class="startingLogoContainer">
+                    <div class="startingLogoInnerContainer">
+                        <div class="gameXMainLogo"><div class="XsLeftHand">
+                        </div><div class="XsRightHand"></div></div>
+                        <div class="gameOMainLogo"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="startButton" onclick="startTheGame()">Start</button>
+        </div>
+    </div>
+    <div class="container-fluid hideAndDisplay" id="playWithContainer">
+        <div class="row commonNewPage displayAnimation">
+            <div class="commonCenteredContainer">
+                <h1 class="winnerText playWithText">Play with</h1>
+                <div class="playWithButtonContainer">
+                    <button class="playWithPersonButton" onclick="showPlayerGame()">Person</button>&nbsp;
+                    <button class="playWithComputerButton" onclick="enableGameContainerFunction()">Computer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mainParentContainer hideAndDisplay" id="playerGameContainer">
+        <div class="row gameMainContainer displayAnimation">
+            <div class="col-12 col-md-6 col-lg-3 gamePlace">
+                <div class="headControlContainer">
+                    <div class="logoContainer">
+                        <div class="Xlogo"><i class="fa-solid fa-xmark "></i></div>&nbsp;
+                        <div span class="Ologo"><i class="fa-solid fa-o "></i></div>
+                    </div>
+                    <div class="whosTurnContainer">
+                        <div class="playersTurn"><span id="player_Turn"></span>&nbsp;&nbsp;'s Turn</div>
+                    </div>
+                    <div class="restartButtonContainer">
+                        <button class="restartButton" onclick="restartOnlyTheGameBox()"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                    </div>
+                </div>
+                <div class="middleXOgameContainer" id="xoPlayerGameBox">
+                    <div class="gameInnerBox" id="gameBox1"></div>
+                    <div class="gameInnerBox" id="gameBox2"></div>
+                    <div class="gameInnerBox" id="gameBox3"></div>
+                    <div class="gameInnerBox" id="gameBox4"></div>
+                    <div class="gameInnerBox" id="gameBox5"></div>
+                    <div class="gameInnerBox" id="gameBox6"></div>
+                    <div class="gameInnerBox" id="gameBox7"></div>
+                    <div class="gameInnerBox" id="gameBox8"></div>
+                    <div class="gameInnerBox" id="gameBox9"></div>
+                </div>
+                <div class="middleXOgameSecondContainer">
+                    <div class="IIndgameInnerBox" id="IIgameBox1" onmouseover="addHoverEffectInBox(1)" onmouseleave="removeaddHoverEffectInBox(1)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox2" onmouseover="addHoverEffectInBox(2)" onmouseleave="removeaddHoverEffectInBox(2)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox3" onmouseover="addHoverEffectInBox(3)" onmouseleave="removeaddHoverEffectInBox(3)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox4" onmouseover="addHoverEffectInBox(4)" onmouseleave="removeaddHoverEffectInBox(4)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox5" onmouseover="addHoverEffectInBox(5)" onmouseleave="removeaddHoverEffectInBox(5)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox6" onmouseover="addHoverEffectInBox(6)" onmouseleave="removeaddHoverEffectInBox(6)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox7" onmouseover="addHoverEffectInBox(7)" onmouseleave="removeaddHoverEffectInBox(7)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox8" onmouseover="addHoverEffectInBox(8)" onmouseleave="removeaddHoverEffectInBox(8)"></div>
+                    <div class="IIndgameInnerBox" id="IIgameBox9" onmouseover="addHoverEffectInBox(9)" onmouseleave="removeaddHoverEffectInBox(9)"></div>
+                </div>
+                <div class="footerDetailsContainer">
+                    <div class="XsResultContainer">
+                        <div class="XsResult"><p class="xWinningCount"><span id="xCountOfWinning">0</span><br/>(YOU)</p></div>
+                    </div>
+                    <div class="TotalresultContainer">
+                        <div class="TotalResult"><p class="xWinningCount"> <span id="drawCountOfWinning">0</span><br/>(Draw)</p></div>
+                    </div>
+                    <div class="OsResultContainer">
+                        <div class="OsResult"><p class="xWinningCount"><span id="oCountOfWinning">0</span><br/>(Opponent)</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid hideAndDisplay" id="winnerResultContainer">
+        <div class="row commonNewPage displayAnimation">
+            <div class="commonCenteredContainer">
+                <h1 class="winnerText">&nbsp;WINNER&#127881;</h1>
+                <div class="winnerLogoName" id="winnerLogoPlace">
+                </div>
+                <p class="winnerDiscription"><span id="whoWonTheGame"></span> Won The Game</p>
+            </div>
+            <div class="winnerResultPageButtonContainer">
+                <button class="winnerPageQuitButton" onclick="quitTheGame()">Quit</button>
+                <button class="winnerPageRestartButton" onclick="restartTheGame()">Restart</button>
+            </div>
+        </div>
+    </div> 
+    <div class="container-fluid mainParentContainer  hideAndDisplay" id="computerGameContainer">
+        <div class="row gameMainContainer displayAnimation">
+            <div class="col-12 col-md-6 col-lg-3 gamePlace">
+                <div class="headControlContainer">
+                    <div class="logoContainer">
+                        <div class="Xlogo"><i class="fa-solid fa-xmark "></i></div>&nbsp;
+                        <div span class="Ologo"><i class="fa-solid fa-o "></i></div>
+                    </div>
+                    <div class="whosTurnContainer">
+                        <div class="playersTurn"><span id="ccplayer_Turn"></span>&nbsp;&nbsp;Turn</div>
+                    </div>
+                    <div class="restartButtonContainer">
+                        <button class="restartButton" onclick="restartOnlyTheGameBox()"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                    </div>
+                </div>
+                <div class="middleXOgameContainer" id="xoPlayerGameBox">
+                    <div class="gameInnerBox" id="ccgameBox1"></div>
+                    <div class="gameInnerBox" id="ccgameBox2"></div>
+                    <div class="gameInnerBox" id="ccgameBox3"></div>
+                    <div class="gameInnerBox" id="ccgameBox4"></div>
+                    <div class="gameInnerBox" id="ccgameBox5"></div>
+                    <div class="gameInnerBox" id="ccgameBox6"></div>
+                    <div class="gameInnerBox" id="ccgameBox7"></div>
+                    <div class="gameInnerBox" id="ccgameBox8"></div>
+                    <div class="gameInnerBox" id="ccgameBox9"></div>
+                </div>
+                <div class="middleXOgameSecondContainer">
+                    <div class="IIndgameInnerBox" id="ccIIgameBox1" onmouseover="ccaddHoverEffectInBox(1)" onmouseleave="ccremoveaddHoverEffectInBox(1)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox2" onmouseover="ccaddHoverEffectInBox(2)" onmouseleave="ccremoveaddHoverEffectInBox(2)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox3" onmouseover="ccaddHoverEffectInBox(3)" onmouseleave="ccremoveaddHoverEffectInBox(3)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox4" onmouseover="ccaddHoverEffectInBox(4)" onmouseleave="ccremoveaddHoverEffectInBox(4)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox5" onmouseover="ccaddHoverEffectInBox(5)" onmouseleave="ccremoveaddHoverEffectInBox(5)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox6" onmouseover="ccaddHoverEffectInBox(6)" onmouseleave="ccremoveaddHoverEffectInBox(6)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox7" onmouseover="ccaddHoverEffectInBox(7)" onmouseleave="ccremoveaddHoverEffectInBox(7)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox8" onmouseover="ccaddHoverEffectInBox(8)" onmouseleave="ccremoveaddHoverEffectInBox(8)"></div>
+                    <div class="IIndgameInnerBox" id="ccIIgameBox9" onmouseover="ccaddHoverEffectInBox(9)" onmouseleave="ccremoveaddHoverEffectInBox(9)"></div>
+                </div>
+                <div class="footerDetailsContainer">
+                    <div class="XsResultContainer">
+                        <div class="XsResult"><p class="xWinningCount"><span id="ccxCountOfWinning">0</span><br/>(YOU)</p></div>
+                    </div>
+                    <div class="TotalresultContainer">
+                        <div class="TotalResult"><p class="xWinningCount"><span id="ccdrawCountOfWinning">0</span><br/>(Draw)</p></div>
+                    </div>
+                    <div class="OsResultContainer">
+                        <div class="OsResult"><p class="xWinningCount"><span id="ccoCountOfWinning">0</span><br/>(Augus)</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- <h1 class="gameX">&#215</h1> -->
+<!--<div class="gameXMainLogo"><div class="XsLeftHand">
+</div><div class="XsRightHand"></div></div>-->
+<!--<div class="gameOMainLogo"></div>-->
